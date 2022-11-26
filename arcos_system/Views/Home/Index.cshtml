@@ -1,0 +1,82 @@
+﻿@model IEnumerable<arcos_system.Models.ItensDeMenu>
+
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+@*    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&display=swap" rel="stylesheet">*@
+
+    <link href="~/css/Home/style.css" rel="stylesheet" />
+@*  <link rel="stylesheet" href="~/css/Home/w.css" />*@
+
+    <title>Treinamento | Arcos System</title>
+
+    <script type="text/javascript">
+        function enviarComentario() {
+            alert("teste");
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="w50">
+            <h2 class="title_arcos">ArcosSys</h2>
+        </div>
+
+        <div class="w50">
+            <div class="menu_right">
+                <a href="login" class="botao-cadastre-se">Sair</a>
+            </div>
+        </div>
+    </header>
+
+    <h2 class="Treinamentos">Treinamento</h2>
+    <h2 class="como_podemos_ajudar">Como podemos ajudar?</h2>
+
+    @foreach (ItensDeMenu item in ViewBag.lista)
+    {
+        <section>
+            <details>
+                <summary>@item.Nome</summary>
+                <p>
+                    <iframe src="@item.Video" title="YouTube video player" frameborder="0" allow="accelerometer;
+                  autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe>
+                </p>
+
+                <label class="possui_mais_duvida">Possui mais alguma dúvida?</label>
+
+                <a href="#abrirModal">Clique aqui</a>
+
+                <div id="abrirModal" class="modal">
+                    <div id="id01">
+                        <a asp-controller="Home" asp-action="Index" title="Fechar" class="fechar">x</a>
+@*                        <a href="#fechar" title="Fechar" class="fechar">x</a>
+*@                      <div class="modal-title">Escreva sua dúvida aqui:</div>
+                        <form method="post" asp-controller="Home" asp-action="EnviarComentario">
+                            <div>
+                                <textarea class="comentario-input" placeholder="Escreva um comentário" name="comentario" required></textarea>
+                                <input type="hidden" name="idItemMenu" value="@item.Id">
+                                <div>
+                                    <button type="submit">Enviar</button>
+                                    @*button onclick="document.getElementById('id01').style.display='none'" type="button">Cancelar</button>
+                                *@
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </details>
+        </section>
+    }
+
+    <script type="text/javascript" src="javascript.js"></script>
+</body>
+</html>

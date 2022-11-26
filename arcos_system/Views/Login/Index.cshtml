@@ -1,0 +1,43 @@
+﻿@model arcos_system.Models.Usuario
+@{
+    Layout = null;
+}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | Arcos System</title>
+   @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="entrar-container">
+            <div>
+                <h2 class="title-entrar">Entre em sua conta</h2>
+                <div class="descricao-entrar">Comece sua jornada com nós!</div>
+                <form asp-controller="Login" asp-action="Logar" class="form" method="post">
+                     <div style="color: red">@TempData["ErrorLogin"]</div>
+                    <input class="input" asp-for="NomeLogin" type="text" placeholder="E-mail">
+                    <div style="color: red">@Html.ValidationMessageFor(x => x.NomeLogin)</div>
+                    <input class="input" asp-for="Senha" type="password" placeholder="Senha">
+                       <div style="color: red">@Html.ValidationMessageFor(x => x.Senha)</div>
+                    <a href="" class="esqueceu-senha">Esqueceu sua senha?</a>
+                    <button class="btn-entrar" type="submit">Entrar</button>
+                </form>
+            </div>
+        </div>
+        <div class="segundo-container">
+            <h2 class="title-arcos">Arcos System</h2>
+            <div class="cadastro-container">
+                <div class="title-bem-vindo">Bem-vindo à nossa</div>
+                <div class="title-bem-vindo title-comunidade">comunidade!</div>
+                <p class="pergunta-membro">Entre para fazer parte da Arcos System</p>
+                <img class="img-login" alt="login-icon" src="~/imagens/iconlogin.png">
+                <div class="pergunta-membro">E receba a ajuda que precisa!</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+

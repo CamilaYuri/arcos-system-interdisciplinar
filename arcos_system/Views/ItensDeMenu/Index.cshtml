@@ -1,0 +1,52 @@
+﻿@model IEnumerable<arcos_system.Models.ItensDeMenu>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<html>
+    <head>
+        <title>Administrador</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    </head>
+    <body>
+<div class = "container">
+<h1>Administrador</h1>
+
+<p>
+    <a asp-action="Create"><img src="\Imagens\plus.png" /> Incluir novo conteúdo</a>
+</p>
+
+<table class="table table-striped">
+    <thead class="thead table-primary">
+        <tr>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Video)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Video)
+            </td>
+            <td>
+                <a asp-action="Create" asp-route-id="@item.Id"><img src="\Imagens\dialogo.png" /> Ler comentários</a>
+                <a asp-action="Edit" asp-route-id="@item.Id"><img src="\Imagens\pencil.png" /> Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id"><img src="\Imagens\search.png" /> Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id"><img src="\Imagens\delete.png" /> Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+</body>
+</html>

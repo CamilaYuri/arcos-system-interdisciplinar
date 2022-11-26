@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+header{
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    height: 7%;
+}
+
+.w50{
+    width:50%;
+    padding:0 10px;
+}
+
+body{
+   background-color: #eeeeee;
+   font-family: 'Poppins', sans-serif;
+}
+
+.menu_right{
+    text-align: right;
+    width: 100%;
+    padding: 1%;
+}
+
+.botao-cadastre-se ,.botao-login{
+    background-color: #6FC0F6;
+    color: white;
+    padding: 9px;
+    text-decoration: none;
+    margin: 0px -2px;
+    border: solid 1px #6FC0F6;
+    border-radius: 4px;
+}
+
+.botao-login{
+    background-color: white; 
+    color:black;
+}
+
+.title_arcos{
+    color:#6FC0F6;
+    font-weight: normal;
+    font-size: 22px;
+    margin-top: 5px;
+}
+
+.treinamentos{
+    color:#0f1011;
+    font-weight: normal;
+    font-size: 22px;
+    margin-top: 5px;
+    margin-left: 10%;
+}
+
+.como_podemos_ajudar{
+    color:#0f1011;
+    font-weight: normal;
+    font-size: 22px;
+    margin-top: 5px;
+    margin-left: 35%;
+}
+
+.button_video{
+    margin-left: 40%;
+}
+
+button {
+    background-color: #2fa6f5;
+    width: 90%;
+    height: 11%;
+    text-decoration: none;
+    border-radius: 4px;
+    border: solid 1px #6FC0F6;
+    color: white;
+    margin-left: 15px;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 10px;
+}
+
+button:hover {
+    margin-top: 5px;
+    background-color: #6FC0F6;
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+section{
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section details{
+    font-size: 15px;
+    overflow-x: hidden;
+}
+
+section details summary{
+    margin: 15px;
+    background-color: #ffffff;
+    padding: 1%;
+}
+
+section details p{
+    background-color: #eeeeee;
+    transition: all .5s;
+    margin-top: -15px;
+    text-align: center;
+}
+
+iframe{
+    width: 97.7%;
+    height:80%;
+}
+
+.possui_mais_duvida {
+    color: #0f1011;
+    font-weight: normal;
+    font-size: 18px;
+    margin-left: 35%;
+}
+
+.modal-title{
+    font-weight: bold;
+    font-size: 20px;
+    margin: 20px 15px 0px 15px;
+/*    text-align: center;
+*/}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    opacity: 0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+.modal:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal > div {
+  width: 35%;
+  height: 75%;
+  position: relative;
+  margin: 7% auto;
+  padding: 15px 20px;
+  background: #ffffff;
+  border-radius: 5px;
+}
+
+.fechar {
+    position: absolute;
+    width: 30px;
+    right: -15px;
+    top: -20px;
+    text-align: center;
+    line-height: 30px;
+    margin-top: 5px;
+    background: #ff4545;
+    border-radius: 50%;
+    font-size: 16px;
+    color: #8d0000;
+    text-decoration: none;
+}
+
+.comentario-input {
+    /*    margin: auto;*/
+    margin: 15px;
+    border: 1.5px solid #DEE1E6;
+    border-radius: 4px;
+    font-size: 15px;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+    min-width: 90%;
+    min-height: 60%;
+    max-width: 90%;
+    max-height: 60%;
+}
